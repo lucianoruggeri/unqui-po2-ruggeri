@@ -1,6 +1,8 @@
 package ar.unq.po2.tp2;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmpleadoPlantaPermanente extends Empleado {
 	
@@ -62,9 +64,16 @@ public class EmpleadoPlantaPermanente extends Empleado {
 
 
 	@Override
-	public ReciboDeHaberes generarRecibo() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Concepto> generarListaDeConceptos() {
+		List<Concepto> conceptos = new ArrayList<Concepto>();		
+		conceptos.add(new Concepto("Sueldo Bruto", this.sueldoBruto()));
+		conceptos.add(new Concepto("Sueldo Basico", this.sueldoBasico));
+		conceptos.add(new Concepto("Salario Familiar", this.salarioFamiliar()));
+		conceptos.add(new Concepto("Retenciones", this.retenciones()));
+		conceptos.add(new Concepto("Obra Social", this.obraSocial()));
+		conceptos.add(new Concepto("Aportes Jubilatorios", this.aportesJubilatorios	()));
+		
+		return conceptos;
 	}
 
 }

@@ -1,6 +1,7 @@
 package ar.unq.po2.tp2;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public abstract class Empleado {
 
@@ -38,6 +39,6 @@ public abstract class Empleado {
 	public abstract int aportesJubilatorios();
 
 	public abstract int sueldoBruto();
-	
-	public abstract ReciboDeHaberes generarRecibo();
+
+	public abstract List<Concepto> generarListaDeConceptos();
 }

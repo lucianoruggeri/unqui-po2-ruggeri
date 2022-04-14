@@ -1,6 +1,7 @@
 package ar.unq.po2.tp2;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmpleadoContratado extends Empleado {
@@ -38,16 +39,25 @@ public class EmpleadoContratado extends Empleado {
 	}
 	
 	@Override
-	public ReciboDeHaberes generarRecibo() {
+	public List<Concepto> generarListaDeConceptos() {		
+			
+		List<Concepto> conceptos = new ArrayList<Concepto>();		
+		conceptos.add(new Concepto("Sueldo Bruto", this.sueldoBruto()));
+		conceptos.add(new Concepto("Sueldo Basico", this.sueldoBasico));
+		conceptos.add(new Concepto("Retenciones", this.retenciones()));
+		conceptos.add(new Concepto("Gastos Administrativos Contractuales", this.retencionPorGastosAdministrativos));
 		
-		return new ReciboDeHaberes(
+		return conceptos;
+		
+		/* return new ReciboDeHaberes(
 				this.nombre,
 				this.direccion, 
 				LocalDate.now(),
 				this.sueldoBruto(),
 				this.sueldoNeto(),
-				[new Concepto("Sueldo Bruto", this.sueldoBruto()] 
+				conceptos
 				);
+	   */
 	}
 	
 	

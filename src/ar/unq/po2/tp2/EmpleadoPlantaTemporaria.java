@@ -1,6 +1,8 @@
 package ar.unq.po2.tp2;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmpleadoPlantaTemporaria extends Empleado {
 	
@@ -35,13 +37,24 @@ public class EmpleadoPlantaTemporaria extends Empleado {
 
 	@Override
 	public int sueldoBruto() {
-		return this.sueldoBasico + this.cantHorasExtras * 40;
+		return this.sueldoBasico + this.pagaPorHorasExtras();
 	}
 
-	@Override	
-	public ReciboDeHaberes generarRecibo() {
-		// TODO Auto-generated method stub
-		return null;
+	@Override
+	public List<Concepto> generarListaDeConceptos() {
+		List<Concepto> conceptos = new ArrayList<Concepto>();		
+		conceptos.add(new Concepto("Sueldo Bruto", this.sueldoBruto()));
+		conceptos.add(new Concepto("Sueldo Basico", this.sueldoBasico));
+		conceptos.add(new Concepto("Cantidad De horas extras", this.pagaPorHorasExtras()));
+		conceptos.add(new Concepto("Retenciones", this.retenciones()));
+		conceptos.add(new Concepto("Aportes Jubilatorios", this.aportesJubilatorios()));
+		conceptos.add(new Concepto("Obra Social", this.obraSocial()));
+		
+		return conceptos;
+	}
+
+	public int pagaPorHorasExtras() {		
+		return this.cantHorasExtras * 40;
 	}
 
 }
