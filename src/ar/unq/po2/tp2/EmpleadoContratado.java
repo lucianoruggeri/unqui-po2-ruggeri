@@ -49,15 +49,6 @@ public class EmpleadoContratado extends Empleado {
 		
 		return conceptos;
 		
-		/* return new ReciboDeHaberes(
-				this.nombre,
-				this.direccion, 
-				LocalDate.now(),
-				this.sueldoBruto(),
-				this.sueldoNeto(),
-				conceptos
-				);
-	   */
 	}
 	
 	
