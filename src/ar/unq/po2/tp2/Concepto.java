@@ -10,6 +10,14 @@ public class Concepto {
 		this.tipo = tipo;
 		this.valor = valor;
 	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public int getValor() {
+		return valor;
+	}
 	
 	
 

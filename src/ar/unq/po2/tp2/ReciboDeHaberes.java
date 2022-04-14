@@ -24,4 +24,29 @@ public class ReciboDeHaberes {
 		this.desgloce = desgloce;
 	}
 
+	public String getNombreDelEmpleado() {
+		return nombreDelEmpleado;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public LocalDate getFechaDeEmision() {
+		return fechaDeEmision;
+	}
+
+	public int getSueldoBruto() {
+		return sueldoBruto;
+	}
+
+	public int getSueldoNeto() {
+		return sueldoNeto;
+	}
+
+	public List<Concepto> getDesgloce() {
+		return desgloce;
+	}
+	
+	
 }

@@ -18,19 +18,15 @@ public class EmpleadoContratado extends Empleado {
 		
 	}
 
-	@Override
-	public int obraSocial() {
-		return 0;
-	}
-
-	@Override
-	public int aportesJubilatorios() {
-		return 0;
-	}
 
 	@Override
 	public int sueldoBruto() {
 		return this.sueldoBasico; 
+	}
+	
+	@Override
+	public int retenciones() {
+		return this.retencionPorGastosAdministrativos; 
 	}
 	
     @Override
@@ -49,6 +45,17 @@ public class EmpleadoContratado extends Empleado {
 		
 		return conceptos;
 		
+	}
+
+
+	@Override
+	public int obraSocial() {
+		return 0;
+	}
+
+	@Override
+	public int aportesJubilatorios() {
+		return 0;
 	}
 	
 	

@@ -66,4 +66,10 @@ public class Empresa {
 		}
 	}
 
+	public List<ReciboDeHaberes> getRecibos() {
+		return recibos;
+	}
+	
+	
+
 }
