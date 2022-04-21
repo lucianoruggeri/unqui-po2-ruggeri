@@ -75,8 +75,10 @@ class CounterTest {
 	@Test
 	
 	public void testMayorMultiplo() {
-		int nro = counter.mayorNroMultiploDe(2,1);
-		assertEquals(nro,-1);
+		int nro = counter.mayorNroMultiploDe(3,9);
+		assertEquals(nro,999);
 	}
+	
+
 
 }

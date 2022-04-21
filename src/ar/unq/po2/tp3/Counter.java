@@ -16,6 +16,7 @@ public class Counter {
 		numeros.add(num);
 	}
 	
+//----------------EJ 1----------------------//
 	public int cantDePares() {
 		
 		int pares = 0;
@@ -55,6 +56,7 @@ public class Counter {
 		return multiplos;
 	}
 	
+//----------------EJ 2----------------------//	
 	public int mayorCantDeDigitosPares() {
 		
 		int nroMayor = numeros.get(0);
@@ -92,6 +94,7 @@ public class Counter {
 		return contDigitosPares;
 	}
 	
+//----------------EJ 3----------------------//
 	
 	  public int mayorNroMultiploDe(int x, int y) {
 	  
@@ -104,6 +107,9 @@ public class Counter {
 
 	  
 	  public List<Integer> multiplosDe(int x, int y) {
+		  
+		  /*armo un array con nros del 1 al 1000. Evito el 0 porq es multiplo de todos los nros 
+		  y si lo incluyo en el array todos los nros lo tendrian como multiplo en comun. */
 		  
 		  int[] numeros = new int[1000];
 		  for(int i=0 ; i<1000 ; i++) {
