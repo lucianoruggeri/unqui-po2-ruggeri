@@ -1,6 +1,6 @@
 package ar.unq.po2.tp5;
 
-public class Producto {
+public class Producto implements IPagable {
 	
 	private double precioBase;
 	private int stock;
@@ -29,9 +29,10 @@ public class Producto {
 		stock = this.getStock()-1;
 	}
 	
+	public void procesar(Caja caja) {
+		this.decrementarStock();	
+	}
 	
-
-
 	
 
 

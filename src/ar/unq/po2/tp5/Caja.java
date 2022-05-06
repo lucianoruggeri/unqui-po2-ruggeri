@@ -3,63 +3,46 @@ package ar.unq.po2.tp5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Caja implements Agencia {
+public class Caja  {
 	
-	private List<Producto> productos;
-	private List<Factura> facturas;
+	private List<IPagable> pagables;	
+	private IAgencia miAgencia;
 	
 	public Caja() {
 		
-		this.productos = new ArrayList<Producto>();
-		this.facturas = new ArrayList<Factura>();
-	}
-	
-	public void agregarProducto(Producto p) {
-		
-		p.decrementarStock();
-		this.productos.add(p);
+		this.pagables = new ArrayList<IPagable>();
 		
 	}
 	
-	public void agregarFactura(Factura f) {
+	public void setAgencia(IAgencia agencia) {
+		this.miAgencia = agencia;
+	}
+	
+	public void agregarPagable(IPagable p) {
 		
-		this.facturas.add(f);
-		
+		this.pagables.add(p);
+		p.procesar(this);
+				
 	}
 
-	public List<Factura> getFacturas() {
-	
-	return facturas;
-	
-	}
-	
-	public List<Producto> getProductos() {
-		return productos;
-	}
 	
 	public double montoTotal() {
 		
-		double totalProductos = 0;
-		double totalFacturas = 0;
+		double total = 0;
 		
-		for(Producto producto:productos) {
-			totalProductos += producto.getPrecio();
-		}
-		
-		for(Factura factura:facturas) {
-			totalFacturas += factura.getPrecio();
+		for(IPagable item:pagables) {
+			total += item.getPrecio();
 		}
 				
-		return totalProductos + totalFacturas;
+		return total;
 		
 	}
-	
-	public void registrarPago(Factura f) {
-		f.pagar();
+
+	public void informarAgenciaPagoDe(Factura factura) {
+		miAgencia.registrarPago(factura);
 	}
-
 	
-
+		
 	
 	
 }
